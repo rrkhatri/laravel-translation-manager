@@ -3,7 +3,7 @@
 namespace Pinetco\TranslationManager;
 
 use Illuminate\Support\Str;
-use Pinetco\TranslationManager\Commands\TranslationManagerCommand;
+use Pinetco\TranslationManager\Commands\ImportTranslationsCommand;
 use Pinetco\TranslationManager\Models\Route;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -28,7 +28,7 @@ class TranslationManagerServiceProvider extends PackageServiceProvider
             ])
             ->hasRoute('web')
             ->hasViews('laravel-translation-manager')
-            ->hasCommand(TranslationManagerCommand::class);
+            ->hasCommand(ImportTranslationsCommand::class);
     }
 
     public function bootingPackage()
