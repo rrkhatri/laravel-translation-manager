@@ -22,10 +22,12 @@ class TranslationManagerServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasViews()
             ->hasMigrations([
-                'create_routes_table',
-                'create_views_table',
-                'create_translations_table',
+                'create_pltm_routes_table',
+                'create_pltm_views_table',
+                'create_pltm_translations_table',
             ])
+            ->hasRoute('web')
+            ->hasViews('laravel-translation-manager')
             ->hasCommand(TranslationManagerCommand::class);
     }
 
