@@ -8,22 +8,25 @@
         <div>
             <label for="from" class="block text-sm font-medium text-gray-700"> Target Text </label>
             <div class="mt-1">
-                <input id="from" name="from" type="text" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <input id="from" name="from" type="text" value="{{ old('from') }}" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             </div>
+            <p class="mt-1 text-sm text-red-700">{{ $errors->first('from') }}</p>
         </div>
 
         <div>
             <label for="to" class="block text-sm font-medium text-gray-700"> Replacement Text </label>
             <div class="mt-1">
-                <input id="to" name="to" type="text" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <input id="to" name="to" type="text" value="{{ old('to') }}" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             </div>
+            <p class="mt-1 text-sm text-red-700">{{ $errors->first('to') }}</p>
         </div>
 
         <div>
             <label for="key" class="block text-sm font-medium text-gray-700"> Swap english key text to</label>
             <div class="mt-1">
-                <input id="key" name="key" type="text" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <input id="key" name="key" type="text" value="{{ old('key') }}" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             </div>
+            <p class="mt-1 text-sm text-red-700">{{ $errors->first('key') }}</p>
         </div>
 
         @if(session('translation.saved'))
