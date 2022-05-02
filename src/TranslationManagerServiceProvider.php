@@ -3,10 +3,10 @@
 namespace Pinetco\TranslationManager;
 
 use Illuminate\Support\Str;
+use Pinetco\TranslationManager\Commands\TranslationManagerCommand;
 use Pinetco\TranslationManager\Models\Route;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Pinetco\TranslationManager\Commands\TranslationManagerCommand;
 
 class TranslationManagerServiceProvider extends PackageServiceProvider
 {
@@ -33,7 +33,7 @@ class TranslationManagerServiceProvider extends PackageServiceProvider
 
     public function bootingPackage()
     {
-        if (!app()->runningInConsole()) {
+        if (! app()->runningInConsole()) {
             $this->listenViewEvents();
         }
     }

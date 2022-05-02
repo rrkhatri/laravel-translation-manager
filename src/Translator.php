@@ -27,7 +27,7 @@ class Translator
 
         $originalKey = $translations->search($translation->from);
 
-        if (!$originalKey) {
+        if (! $originalKey) {
             $translation->processed();
 
             return;
@@ -52,7 +52,7 @@ class Translator
     {
         $path = resource_path("lang/{$this->translation->locale}.json");
 
-        if (!File::exists($path)) {
+        if (! File::exists($path)) {
             throw new Exception('Language file not found');
         }
 
@@ -86,7 +86,9 @@ class Translator
             ];
 
             $newContent = str_replace(
-                array_keys($replacements), array_values($replacements), $content
+                array_keys($replacements),
+                array_values($replacements),
+                $content
             );
 
             File::put($view->path, $newContent);

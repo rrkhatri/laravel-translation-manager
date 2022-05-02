@@ -40,7 +40,7 @@ class Translation extends Model
 
     public function shouldAddNewKey()
     {
-        return !!$this->key;
+        return ! ! $this->key;
     }
 
     public function process()
