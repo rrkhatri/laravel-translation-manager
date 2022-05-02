@@ -4,7 +4,6 @@ namespace Pinetco\TranslationManager\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Auth;
 use Pinetco\TranslationManager\Models\Route;
 use Pinetco\TranslationManager\Models\Translation;
 
