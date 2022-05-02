@@ -68,7 +68,7 @@ class Translator
 
     protected function writeTranslationsToLangFile(Collection $translations): void
     {
-        File::put($this->langFilePath, $translations->toJson());
+        File::put($this->langFilePath, $translations->toJson(JSON_PRETTY_PRINT));
     }
 
     protected function replaceTranslationKeyInViews($originalKey)
