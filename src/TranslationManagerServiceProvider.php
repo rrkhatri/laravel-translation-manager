@@ -28,6 +28,7 @@ class TranslationManagerServiceProvider extends PackageServiceProvider
             ])
             ->hasRoute('web')
             ->hasViews('laravel-translation-manager')
+            ->hasMigrations(['create_pltm_routes_table', 'create_pltm_translations_table', 'create_pltm_views_table'])
             ->hasCommand(ImportTranslationsCommand::class);
     }
 
